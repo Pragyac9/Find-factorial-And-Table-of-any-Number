@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            background: url(https://th.bing.com/th/id/OIP.x8GECyun6Rf-VHTUJtzwrAHaFj?rs=1&pid=ImgDetMain);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* height: 100vh; */
+            width: 30%;
+            text-align: center;
+            /* backdrop-filter: blur(50px); */
+            font-size: larger;
+
+
+        }
+
+        .button {
+            --color: #966565;
+            padding: 0.6em 1.0em;
+            background-color: transparent;
+            border-radius: .3em;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: .5s;
+            font-weight: 500;
+            font-size: 10px;
+            border: 1px solid;
+            font-family: inherit;
+            text-transform: uppercase;
+            color: var(--color);
+            z-index: 1;
+        }
+
+        .button::before,
+        .button::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            background-color: var(--color);
+            transition: 1s ease;
+        }
+
+        .button::before {
+            top: -1em;
+            left: -1em;
+        }
+
+        .button::after {
+            left: calc(100% + 1em);
+            top: calc(100% + 1em);
+        }
+
+        .button:hover::before,
+        .button:hover::after {
+            height: 410px;
+            width: 410px;
+        }
+
+        .button:hover {
+            color: rgb(10, 25, 30);
+        }
+
+        .button:active {
+            filter: brightness(.8);
+        }
+
+        input {
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <fieldset>
+
+
+            <legend>Multiplication Table</legend>
+
+            <div>
+                Enter a number: <input type="number" id="numberInput" min="1" max="10">
+                <button class="button" onclick="generateTable()">Generate Table</button>
+            </div> <br>
+
+            <div id="result"></div>
+
+        </fieldset>
+    </div>
+    <script src="script.js">
+
+    </script>
+
+</body>
+
+</html>
